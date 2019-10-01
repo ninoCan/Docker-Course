@@ -1,3 +1,5 @@
+# Docker course
+
 We are now going learn to create a docker container and see how this is much
 more convenient than the virtual machine in term of time spent setting things
 up.
