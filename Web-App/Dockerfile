@@ -24,10 +24,10 @@
     #expand the tar.gz package
     RUN mv /var/www/wordpress/wp-config-sample.php /var/www/wordpress/wp-config.php
     #create the configuration file out of the already available Wordpress sample
-    RUN sed -i 's/'database_name_here'/getenv('DB_NAME')/' /var/www/wordpress/wp-config.php
-    RUN sed -i 's/'username_here'/getenv('DB_USER')/' /var/www/wordpress/wp-config.php
-    RUN sed -i 's/'database_password'/getenv('DB_PASSWORD')/' /var/www/wordpress/wp-config.php
-    RUN sed -i 's/'localhost'/getenv('DB_HOST')/' wordpress/wp-config.php
+    RUN sed -i 's/'database_name_here'/getenv("DB_NAME")/' /var/www/wordpress/wp-config.php
+    RUN sed -i 's/'username_here'/getenv("DB_USER")/' /var/www/wordpress/wp-config.php
+    RUN sed -i 's/'password_here'/getenv("DB_PASSWORD")/' /var/www/wordpress/wp-config.php
+    RUN sed -i 's/'localhost'/getenv("DB_HOST")/' wordpress/wp-config.php
     #define the variables to be inputed at the time of container launch for the database configuration
     RUN cd /etc/apache2/sites-enabled/
     RUN sed -i 's/\/var\/www\/html/\/var\/www\/wordpress/' /etc/apache2/sites-enabled/000-default.conf
