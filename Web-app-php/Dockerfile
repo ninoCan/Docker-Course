@@ -25,6 +25,8 @@
     #move the starting directory to /var/www/
     RUN tar -xzvf latest.tar.gz -C /var/www/
     #expand the package
+    RUN rm latest.tar.gz
+    #remove the taz.gz package from the container
     RUN mv /var/www/wordpress/wp-config-sample.php /var/www/wordpress/wp-config.php
     #create the WordPress configuration file out of the available sample
     RUN sed -i "s/'database_name_here'/getenv('DB_NAME')/" /var/www/wordpress/wp-config.php
