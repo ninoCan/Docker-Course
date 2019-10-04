@@ -27,15 +27,15 @@
     #expand the package
     RUN mv /var/www/wordpress/wp-config-sample.php /var/www/wordpress/wp-config.php
     #create the WordPress configuration file out of the available sample
-    RUN sed -i 's/'database_name_here'/getenv('DB_NAME')/' /var/www/wordpress/wp-config.php
-    RUN sed -i 's/'username_here'/getenv('DB_USER')/' /var/www/wordpress/wp-config.php
-    RUN sed -i 's/'database_password'/getenv('DB_PASSWORD')/' /var/www/wordpress/wp-config.php
-    RUN sed -i 's/'localhost'/getenv('DB_HOST')/' wordpress/wp-config.php
+    RUN sed -i "s/'database_name_here'/getenv('DB_NAME')/" /var/www/wordpress/wp-config.php
+    RUN sed -i "s/'username_here'/getenv('DB_USER')/" /var/www/wordpress/wp-config.php
+    RUN sed -i "s/'password_here'/getenv('DB_PASSWORD')/" /var/www/wordpress/wp-config.php
+    RUN sed -i "s/'localhost'/getenv('DB_HOST')/" wordpress/wp-config.php
     # define and put in place the variables needed to be inputed at time of the container initialization
     RUN cd /etc/apache2/sites-enabled/
     RUN sed -i 's/\/var\/www\/html/\/var\/www\/wordpress/' /etc/apache2/sites-enabled/000-default.conf
     #tells apache to load the wordpress page instead of the simple php file
-#version 1.0 stops here
+    #version 1.0 stops here
 
     EXPOSE 80
     #opens port 80 for external comunication
