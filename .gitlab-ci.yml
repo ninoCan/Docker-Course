@@ -1,10 +1,10 @@
 stages:
-    - build
     - cloud
+    - build
     
     gcloud:
         stage: cloud
-        image: docker:latest
+        image: docker:dind
         services:
             - docker:dind
         variables:
