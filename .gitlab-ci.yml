@@ -34,3 +34,4 @@ stages:
         - master
     tags:
         - dev2ops
+        
