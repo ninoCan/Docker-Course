@@ -25,8 +25,11 @@
     WORKDIR /var/www/
     #expand the package
 <<<<<<< HEAD
+<<<<<<< HEAD
     RUN tar -xzvf latest.tar.gz -C /var/www/
 =======
+=======
+>>>>>>> cba00818728bd59c2b5ccc99d4419bb7e5e8b877
     RUN rm latest.tar.gz
     #remove the taz.gz package from the container. Version 1.1
     RUN mv /var/www/wordpress/wp-config-sample.php /var/www/wordpress/wp-config.php
