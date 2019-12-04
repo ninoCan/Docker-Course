@@ -38,6 +38,7 @@ This is basically it. With a oneliner we performed all the work that took us
 hours with the virtual machine. Moreover, we do not even need to have nginx
 installed on the local machine, docker takes care of it on its own!
 Let us analyze in detail what we just did:
+
 |--------| ---- | 
 | --name | this flag is followed by the name of the container we are going to create |
 | -p 80:80 | forwards the local port 80 to the container port 80 |
@@ -78,7 +79,7 @@ Example output on screen:
     preferred_lft forever
 ```
 We can notice that this as already created an additional (3: docker0) port to
-the web with ip 172.17.0.1. This address can be contacted from the browser,
+the web with ip `172.17.0.1`. This address can be contacted from the browser,
 and gives back the nginx front page. The sheer beaut of simplicity! 
 
 The major upperhand is that we can run multiple instances on the fly, eg:
@@ -86,8 +87,8 @@ The major upperhand is that we can run multiple instances on the fly, eg:
     $ docker run --name nginx-8080 -p 8080:80 -d nginx
     $ sudo docker run --name nginx-localhost -p 127.0.0.1:8888:80 -d nginx
 
-More about `docker run` flags and examples at:
-(docker run)[https://docs.docker.com/engine/reference/commandline/run/]
+More about `docker run` flags and examples at: 
+[docker run](https://docs.docker.com/engine/reference/commandline/run/)
 
 ## LIST, STOP, RESTART & REMOVE CONTAINERS
 To list the running container simply run:
@@ -104,10 +105,10 @@ Once stopped, and only when inactive, the created containers can be removed:
     $ sudo docker rm <name-inactive-container1> ...
 
 More about docker command flag and examples at:
-(docker ps)[https://docs.docker.com/engine/reference/commandline/ps/]
-(docker stop)[https://docs.docker.com/engine/reference/commandline/stop/]
-(docker start)[https://docs.docker.com/engine/reference/commandline/start/]
-(docker rm)[https://docs.docker.com/engine/reference/commandline/rm/]
+[docker ps](https://docs.docker.com/engine/reference/commandline/ps/)
+[docker stop](https://docs.docker.com/engine/reference/commandline/stop/)
+[docker start](https://docs.docker.com/engine/reference/commandline/start/)
+[docker rm](https://docs.docker.com/engine/reference/commandline/rm/)
 
 ## CONTAINER ENVIRONMENT VARIABLES
 
