@@ -39,6 +39,7 @@ hours with the virtual machine. Moreover, we do not even need to have nginx
 installed on the local machine, docker takes care of it on its own!
 Let us analyze in detail what we just did:
 
+|     |     |
 |--------| ---- | 
 | --name | this flag is followed by the name of the container we are going to create |
 | -p 80:80 | forwards the local port 80 to the container port 80 |
